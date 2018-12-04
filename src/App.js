@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import dc_logo from './dc_logo.png'
@@ -10,12 +10,12 @@ function HomePage() {
     <div>
       <h1>First react app</h1>
         <div className="container">
-          <div className="column">
+          <Link to="/dc-comics" className="column">
             <img src={dc_logo} className="App-dc" alt="dc logo"/>
-          </div>
-          <div className="column">
+          </Link>
+          <Link to="/marvel-comics" className="column">
             <img src={marvel_logo} className="App-marvel" alt="marvel logo"/>
-          </div>
+          </Link>
         </div>
     </div>
   )
