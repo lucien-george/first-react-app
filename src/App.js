@@ -1,26 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import logo from './logo.svg';
 import './App.css';
+import dc_logo from './dc_logo.png'
+import marvel_logo from './marvel_logo.jpg'
+
+function HomePage() {
+  return(
+    <div>
+      <h1>First react app</h1>
+        <div className="container">
+          <div className="column">
+            <img src={dc_logo} className="App-dc" alt="dc logo"/>
+          </div>
+          <div className="column">
+            <img src={marvel_logo} className="App-marvel" alt="marvel logo"/>
+          </div>
+        </div>
+    </div>
+  )
+}
+
+function DCComics() {
+  return(
+    <div>
+      <h1>This is the DCComics pages</h1>
+    </div>
+  )
+}
+
+function MarvelComics() {
+  return(
+    <div>
+      <h1>This is the Marvel Page</h1>
+    </div>
+  )
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/dc-comics" component={DCComics}/>
+          <Route exact path="/marvel-comics" component={MarvelComics}/>
+        </div>
+      </Router>
     );
   }
 }
