@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
-import dc_logo from './dc_logo.png'
-import marvel_logo from './marvel_logo.jpg'
+import dc_logo from './dc_logo.png';
+import marvel_logo from './marvel_logo.jpg';
+import batman from './batman.jpg';
+import robin from './robbin.png';
+import superman from './superman.jpg';
 
 function HomePage() {
   return(
@@ -21,10 +24,24 @@ function HomePage() {
   )
 }
 
+function Hero(props) { // props is an object that will handle whatever we pass as an argument. props is just convention. can be called anything
+  return(
+    <div className="column">
+      <h1>{props.name}</h1>
+      <img src={props.src} className="App-logo" alt={props.name}/>
+    </div>
+  )
+}
+
 function DCComics() {
   return(
     <div>
       <h1>This is the DCComics pages</h1>
+      <div className="container">
+        <Hero name="batman" src={batman}/>
+        <Hero name="robin" src={robin}/>
+        <Hero name="superman" src={superman}/>
+      </div>
     </div>
   )
 }
