@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import logo from './logo.svg';
 import './App.css';
 import dc_logo from './dc_logo.png';
 import marvel_logo from './marvel_logo.jpg';
